@@ -73,10 +73,8 @@ let dessert = 'cheesecake';
 favoriteFoods.push(dessert);
 
 //test 4a
-console.log('4a verification: last element should be cheesecake and is', favoriteFoods[favoriteFoods.length - 1]);
-if(favoriteFoods[favoriteFoods.length - 1] == 'cheesecake'){
-  console.log('success');
-} else console.log('fail');
+console.log('4a: last element should be cheesecake and is', favoriteFoods[favoriteFoods.length - 1]);
+console.assert(favoriteFoods[favoriteFoods.length - 1] == 'cheesecake', 'oh no! last element of favorite food is not cheesecake!');
 
 // Example: Add to the beginning of an array using the Array.unshift method.
 let animalToUnshift = 'walrus';
@@ -91,11 +89,8 @@ let entree = 'ravioli';
 favoriteFoods.unshift(entree);
 
 //test 4b
-console.log('first element in favoriteFoods should be ravioli and is', favoriteFoods[0]);
-if(favoriteFoods[0] == 'ravioli'){
-  console.log('success');
-} else console.log('fail');
-
+console.log('4b: first element in favoriteFoods should be ravioli and is', favoriteFoods[0]);
+console.assert(favoriteFoods[0] == 'ravioli', 'oh no! first element of favorite food is not ravioli!');
 // Example: Remove the last animal by using the Array.pop method.
 let removedAnimal = animalArray.pop();
 console.log('Removed the last animal', removedAnimal);
@@ -110,7 +105,14 @@ let colors = ['orange', 'yellow', 'green', 'teal'];
 //      Don't forget! Use console.log to verify that the `colors`
 //      array only contains three items now, AND to verify that `lastColor`
 //      contains the value "teal".)
+let lastColor = colors.pop();
 
+//test 4c
+console.log('colors array should have 3 elements and it has', colors.length);
+console.assert(colors.length == 3, 'oh no! colors has length other than 3!');
+
+console.log('lastColor should contain teal and contains', lastColor);
+console.assert(lastColor == 'teal', 'oh no! lastColor var is not == teal!');
 
 // Example: Remove the first animal using the Array.shift method.
 removedAnimal = animalArray.shift();
@@ -121,8 +123,9 @@ console.log('The animals are now', animalArray);
 //      inside a new variable called `firstColor`.
 //      To verify that your code worked, console.log `firstColor`!  
 
-
-
+let firstColor = colors.shift();
+console.log('firstColor should be orange and is', firstColor);
+console.assert(firstColor == 'orange', 'oh no! firstColor is not == orange!');
 
 // STRETCH GOALS:
 
